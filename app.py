@@ -139,9 +139,6 @@ def deleteDebtor():
 def error(errorType):
     return render_template('error.html', error = errorType)
 
-# @app.route('/cancelLoan')
-# def cancelLoan():
-#     return "test"
 
 @app.route('/newPayment', methods = ['GET', 'POST'])
 def newPayment():
