@@ -1,0 +1,33 @@
+{% extends 'masterTemplate.html' %}
+
+{% block title %}
+<div class="w3-cell">
+    <h2>View Debtors</h2>
+</div>
+{% endblock %}
+
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+    <p><i>Select a debtor from the list</i></p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="w3-row">
+    {% if not debtors %}
+    <p>There are no debtors currenty in the system.</p>
+    {% endif %}
+
+    {% for debtor in debtors %}
+    <div class="w3-col m6 l3">
+        <a href="" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>{{ debtor.firstName }} {{ debtor.lastName }}</h3>
+                <p class="currTotalOwed" id="{{ debtor.debtorID }}"></p>
+            </div>
+        </a>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

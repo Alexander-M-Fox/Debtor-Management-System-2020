@@ -1,0 +1,99 @@
+{% extends 'masterTemplate.html' %}
+{% block title %}
+<div class="w3-container w3-third">
+	<h2>Your Overview</h2>
+</div>
+
+{% endblock %}
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+	<p><i>Current loans and debtors at a glance</i></p>
+</div>
+{% endblock %}
+{% block content %}
+<div class="w3-cell-row w3-border-bottom w3-margin-bottom w3-margin-top">
+	<div class="w3-container w3-third">
+		<h3>Current outstanding debts</h3>
+	</div>
+	<div class="w3-rest w3-right-align">
+		<p><i>Total amount owed: £11.11</i></p>
+	</div>
+</div>
+<div class="w3-container w3-margin-bottom">
+	<table id="currentDebtorTable" class="w3-table w3-striped w3-hoverable">
+		<tr>
+			<th>
+				Name of Debtor
+			</th>
+			<th>
+				Amount Owed
+			</th>
+			<th>
+				Amount Paid Off
+			</th>
+			<th>
+				Amount Left to Pay
+			</th>
+			<th>
+				Proposed Date of Payment
+			</th>
+
+		</tr>
+		{% for loan in currLoans %}
+		<tr>
+			<td>
+				{{ loan.debtorInfo.firstName }} {{ loan.debtorInfo.lastName }}
+			</td>
+			<td>
+				{{ loan.amountCredited }}
+			</td>
+			<td>
+				{{loan.currentAmountPaid}}
+			</td>
+			<td>
+				{{ loan.amountCredited - loan.currentAmountPaid }}
+			</td>
+			<td>
+				Test
+			</td>
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+<div class="w3-container w3-border-bottom w3-margin-top w3-margin-bottom">
+	<h3>Debtor List</h3>
+</div>
+
+<div class="w3-container">
+	<table id="pastDebtorTable" class="w3-table w3-striped w3-hoverable">
+		<tr>
+			<th>
+				Name of Debtor
+			</th>
+			<th>
+				Contact Number
+			</th>
+			<th>
+				Total Amount Owed
+			</th>
+
+		</tr>
+		{% for debtor in currDebtors %}
+		<tr>
+			<td>
+				{{ debtor.firstName }} {{ debtor.lastName }}
+			</td>
+			<td>
+				{{ debtor.contactNo }}
+			</td>
+			<td>
+				<p class="currTotalOwed" id="{{ debtor.debtorID }}"></p>
+			</td>
+
+		</tr>
+		{% endfor %}
+	</table>
+</div>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'masterTemplate.html' %}
+{% block title %}
+<div class="w3-cell">
+    <h2>Delete Debtor</h2>
+</div>
+{% endblock %}
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+    <p><i>Select what debtor/s below</i></p>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="w3-row">
+    <div class="w3-col l4 m7">
+        <div class="w3-container w3-margin-top">
+            <form action="/deleteDebtor" method="POST">
+                <div class="w3-margin">
+                    <label>Choose Debtor</label>
+                    <select name="debtorID" id="debtorID" class="w3-select w3-border w3-round">
+                        <option disabled selected value="">--</option>
+                        {% for debtor in debtors %}
+                        <option value="{{ debtor.debtorID }}">{{ debtor.firstName }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="w3-margin">
+                    <input type="submit" value="Delete Debtor" class="w3-button w3-teal">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

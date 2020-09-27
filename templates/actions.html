@@ -1,0 +1,70 @@
+{% extends 'masterTemplate.html' %}
+
+{% block title %}
+<div class="w3-cell">
+    <h2>Manage Debts</h2>
+</div>
+{% endblock %}
+
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+    <p><i>Click the box corresponding to what you want to do</i></p>
+</div>
+{% endblock %}
+
+{% block content %}
+<div class="w3-row">
+    <div class="w3-col m6">
+        <a href="{{ url_for('overview') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>Overview</h3>
+                <p>Current loans and debtors at a glance</p>
+            </div>
+        </a>
+    </div>
+    <div class="w3-col m6">
+        <a href="{{ url_for('viewDebtors') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>View Debtors</h3>
+                <p>View all debtors</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="w3-row">
+    <div class="w3-col m4">
+        <a href="{{ url_for('newDebtor') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>New debtor</h3>
+                <p>Add a new debtor to the database</p>
+            </div>
+        </a>
+    </div>
+    <div class="w3-col m4">
+        <a href="{{ url_for('newLoan') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>New Loan</h3>
+                <p>Create a new loan with an existing debtor</p>
+            </div>
+        </a>
+    </div>
+    <div class="w3-col m4">
+        <a href="{{ url_for('newPayment') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>New payment</h3>
+                <p>Assign a new payment to a preexisting loan</p>
+            </div>
+        </a>
+    </div>
+</div>
+<div class="w3-row">
+    <div class="w3-col">
+        <a href="{{ url_for('deleteDebtor') }}" style="text-decoration: none;">
+            <div class="w3-card w3-padding w3-margin w3-center">
+                <h3>Delete Debtor</h3>
+                <p>Remove a debtor that has no current outstanding loans</p>
+            </div>
+        </a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+
+	<title>Debtor Management App</title>
+
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+</head>
+
+<body>
+	<header class="w3-container w3-teal">
+		<div class="w3-cell-row">
+			<div class="w3-cell">
+				<a style="text-decoration: none;" href="{{ url_for('actions') }}">
+					<h1 class="w3-margin-bottom w3-margin-top">Debtor Management App</h1>
+				</a>
+			</div>
+			<div class="w3-cell w3-right-align">
+				<p><i>By Beardo Weirdo</i></p>
+			</div>
+		</div>
+	</header>
+
+	<div class="w3-container w3-border-bottom w3-margin-bottom">
+		<div class="w3-cell-row">
+			{% block title %} {% endblock %}
+			{% block subtitle %} {% endblock %}
+		</div>
+	</div>
+
+	<div class="w3-container">
+		{% block content %} {% endblock %}
+	</div>
+
+	<script src="{{ url_for('static', filename='js/script.js') }}" defer>
+
+	</script>
+</body>
+
+</html>

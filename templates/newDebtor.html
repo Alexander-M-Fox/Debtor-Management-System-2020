@@ -1,0 +1,27 @@
+{% extends 'masterTemplate.html' %}
+{% block title %}
+<div class="w3-cell">
+    <h2>Add a new Debtor</h2>
+</div>
+{% endblock %}
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+    <p><i>Fill the details below</i></p>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="w3-container w3-margin-top" style="width:40%;">
+    <form action="/newDebtor" method="POST">
+        First name:
+        <input type="text" id="firstName" name="firstName" class="w3-input w3-border w3-round"> <br>
+        Last name:
+        <input type="text" id="lastName" name="lastName" class="w3-input w3-border w3-round"><br>
+        Contact number:
+        <input type="tel" id="contact" name="contact" class="w3-input w3-border w3-round"><br>
+        <input type="submit" value="Add Debtor" class="w3-button w3-teal">
+
+    </form>
+</div>
+
+{% endblock %}

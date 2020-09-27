@@ -1,0 +1,21 @@
+{% extends 'masterTemplate.html' %}
+{% block title %}
+<div class="w3-cell">
+    <h2>Error</h2>
+</div>
+{% endblock %}
+{% block subtitle %}
+<div class="w3-rest w3-right-align">
+    <p><i>Something didn't work right...</i></p>
+</div>
+{% endblock %}
+{% block content %}
+
+<div class="w3-container w3-center">
+    <p><i>There was an error when you tried to
+            {% if error == 'deleteDebtor' %} delete a debtor. {% endif %}
+            {% if error == 'makePayment' %} make a payment. {% endif %}
+            {% if error == 'overpay' %} overpay a loan. {% endif %}</i></p>
+</div>
+
+{% endblock %}
